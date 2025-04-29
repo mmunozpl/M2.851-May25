@@ -6,7 +6,7 @@ Tipología y ciclo de vida de los datos PRA2 UOC Mar2025
 Scraper en Python para extraer anuncios de licitaciones y contrataciones diarias publicadas en el Boletín Oficial del Estado (BOE) a lo largo de un período definido de 10 años (2014–2024). El proceso se organiza de forma modular y el dataset resultante se guarda en el directorio `CSV`.
 
 ## Estructura del Proyecto
-
+```
 . 
 ├── CSV
 │   ├── LICENSE_dataset.txt 
@@ -22,7 +22,7 @@ Scraper en Python para extraer anuncios de licitaciones y contrataciones diarias
     ├── obtener_datos_economicos.py
     ├── obtener_anuncios.py 
     └── main.py
-
+```
 ## Descripción del Código
 
 El proceso se organiza en cinco apartados:
