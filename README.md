@@ -77,12 +77,12 @@ El proceso se organiza en cinco apartados:
 
 ## Buenas Prácticas y Consideraciones Éticas
 
-- **Persistencia de conexión** con `requests.Session()`
-- **Timeouts y reintentos** configurados
-- **Delay configurable** entre peticiones para no sobrecargar el servidor
-- **Modularidad**: cada función en su archivo
-- **Gestión de errores** para permitir ejecución continua
-- **Verificación cruzada** entre fuentes de datos (`verificacion_organismo`)
+- Persistencia de conexión con `requests.Session()`
+- Timeouts y reintentos configurados
+- Delay configurable entre peticiones para no sobrecargar el servidor
+- Modularidad: cada función en su archivo
+- Gestión de errores para permitir ejecución continua
+- Verificación cruzada entre fuentes de datos (`verificacion_organismo`)
 
 ## Requisitos
 
