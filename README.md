@@ -97,8 +97,7 @@ El proceso se organiza en cinco apartados:
 
 Para ejecutar el scraper, sitúate en el directorio raíz y lanza:
 
-´´´
 python source/main.py
-´´´
+
 El CSV final se generará en `CSV/licitaciones_contrataciones_BOE_2014_2024.csv`
 
