@@ -28,7 +28,7 @@ def main() -> None:
     Función para extraer los datos diarios del BOE y generar el CSV final
     """
     # Se define el período: del 1 de enero de 2014 al 31 de diciembre de 2024
-    start_date = datetime(2014, 1, 1)
+    start_date = datetime(2024, 12, 19)
     end_date = datetime(2024, 12, 31)
     todos_anuncios = []
     current_date = start_date
@@ -77,8 +77,8 @@ def main() -> None:
     df = df[[col for col in column_order if col in df.columns]]
 
     # Guardar versión en carpeta interna de trabajo
-    os.makedirs("datos/boe", exist_ok=True)
-    df.to_csv("datos/boe/licitaciones_contrataciones_BOE_ampliado.csv", index=False)
+    #os.makedirs("datos/boe", exist_ok=True)
+    df.to_csv("CSV/licitaciones_contrataciones_BOE_2014_2024_ampliado.csv", index=False)
 
     # Guardar también en la carpeta oficial CSV del proyecto
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

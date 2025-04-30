@@ -50,7 +50,7 @@ El proceso se organiza en cinco apartados:
   - Define el rango de fechas y llama a `obtener_anuncios` día por día
   - Aplica un `delay` entre solicitudes
   - Añade una columna de verificación (`verificacion_organismo`) que compara `Organismo responsable` y `nombre_poder_adjudicador`
-  - Exporta el resultado a `datos/boe/` y a `CSV/` como `licitaciones_contrataciones_BOE_2014_2024.csv`
+  - Exporta el resultado a `CSV/` como `licitaciones_contrataciones_BOE_2014_2024.csv`
 
 ### Atributos del dataset
 
