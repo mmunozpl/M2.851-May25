@@ -28,7 +28,7 @@ def main() -> None:
     Función para extraer los datos diarios del BOE y generar el CSV final
     """
     # Se define el período: del 1 de enero de 2014 al 31 de diciembre de 2024
-    start_date = datetime(2024, 12, 19)
+    start_date = datetime(2014, 1, 1)
     end_date = datetime(2024, 12, 31)
     todos_anuncios = []
     current_date = start_date
@@ -78,18 +78,32 @@ def main() -> None:
 
     # Guardar versión en carpeta interna de trabajo
     #os.makedirs("datos/boe", exist_ok=True)
-    df.to_csv("CSV/licitaciones_contrataciones_BOE_2014_2024_ampliado.csv", index=False)
+    #df.to_csv("CSV/licitaciones_contrataciones_BOE_2014_2024_ampliado.csv", index=False)
 
     # Guardar también en la carpeta oficial CSV del proyecto
+    #project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    #output_dir = os.path.join(project_root, "CSV")
+    #os.makedirs(output_dir, exist_ok=True)
+    #output_filename = os.path.join(output_dir, "licitaciones_contrataciones_BOE_2014_2024.csv")
+    #df.to_csv(output_filename, index=False)
+
+    # Crear carpeta CSV si no existe
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     output_dir = os.path.join(project_root, "CSV")
     os.makedirs(output_dir, exist_ok=True)
-    output_filename = os.path.join(output_dir, "licitaciones_contrataciones_BOE_2014_2024.csv")
-    df.to_csv(output_filename, index=False)
 
-    print(f"Dataset guardado en {output_filename}")
+    # Guardar versión ampliada
+    output_ampliado = os.path.join(output_dir, "licitaciones_contrataciones_BOE_2014_2024_ampliado.csv")
+    df.to_csv(output_ampliado, index=False)
+
+    # Guardar versión estándar
+    #output_filename = os.path.join(output_dir, "licitaciones_contrataciones_BOE_2014_2024.csv")
+    #df.to_csv(output_filename, index=False)
+
+    print(f"Dataset ampliado guardado en {output_ampliado}")
+    #print(f"Dataset oficial guardado en {output_filename}")
     print("Tamaño de dataset:", df.shape)
-    print(df.head(15))
+    print(df.sample(15))
 
 if __name__ == '__main__':
     main()
