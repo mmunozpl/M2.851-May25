@@ -1,4 +1,4 @@
-**Licencia CC0: Public Domain License**  
+**Licencia CC0: Public Domain License**
 
 Este dataset se libera bajo la licencia **CC0 (Public Domain License)**.  
 Puedes copiar, modificar, distribuir y utilizar libremente el dataset sin necesidad de pedir permiso o atribuir la fuente. Esta licencia promueve el acceso abierto y la libre reutilización de la información, tanto en entornos académicos, empresariales o gubernamentales, como para cualquier otra finalidad.  

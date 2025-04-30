@@ -5,6 +5,7 @@ diarios del BOE y genera un DataFrame que se guarda en un archivo CSV
 dentro del directorio CSV
 """
 
+
 import os
 import time
 from datetime import datetime, timedelta

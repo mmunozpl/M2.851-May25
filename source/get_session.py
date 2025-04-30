@@ -4,6 +4,7 @@ Este módulo contiene la función get_session, que crea y devuelve una sesión
 de requests configurada con reintentos y un User-Agent personalizado
 """
 
+
 from requests import Session
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry

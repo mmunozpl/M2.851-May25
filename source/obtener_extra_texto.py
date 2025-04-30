@@ -5,6 +5,7 @@ que extrae información complementaria sobre códigos CPV
 de cada página detallada del anuncio del BOE
 """
 
+
 from typing import Dict
 from bs4 import BeautifulSoup
 from source.get_session import get_session

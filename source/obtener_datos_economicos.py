@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 def obtener_datos_economicos_y_nif(enlace_html: str, tipo_anuncio: str) -> dict:
     campos = {
         "nif_licitador": "No disponible",
