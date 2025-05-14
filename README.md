@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>BOE Data Scraper - PRA2 UOC</title>
-  <style>
-    body { font-family: "Segoe UI", sans-serif; line-height: 1.6; margin: 2em; max-width: 900px; }
-    code, pre { background-color: #f4f4f4; padding: 2px 5px; border-radius: 4px; }
-    pre { overflow-x: auto; padding: 10px; }
-    h1, h2, h3 { color: #2a4a6a; }
-    h1 { border-bottom: 2px solid #ccc; padding-bottom: 0.3em; }
-    ul { list-style-type: square; }
-  </style>
-</head>
-<body>
-
 <h1>BOE Data Scraper</h1>
 <p><strong>Tipología y ciclo de vida de los datos PRA2 UOC Mar2025</strong></p>
 
