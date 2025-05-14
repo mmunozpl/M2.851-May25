@@ -5,7 +5,6 @@ información de la sección "ANÁLISIS" de la página detallada
 de cada anuncio del BOE
 """
 
-
 from typing import Dict
 from bs4 import BeautifulSoup
 from source.get_session import get_session
