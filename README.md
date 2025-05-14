@@ -1,13 +1,26 @@
-# M2851-May25 
-Tipología y ciclo de vida de los datos PRA2 UOC Mar2025
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>BOE Data Scraper - PRA2 UOC</title>
+  <style>
+    body { font-family: "Segoe UI", sans-serif; line-height: 1.6; margin: 2em; max-width: 900px; }
+    code, pre { background-color: #f4f4f4; padding: 2px 5px; border-radius: 4px; }
+    pre { overflow-x: auto; padding: 10px; }
+    h1, h2, h3 { color: #2a4a6a; }
+    h1 { border-bottom: 2px solid #ccc; padding-bottom: 0.3em; }
+    ul { list-style-type: square; }
+  </style>
+</head>
+<body>
 
-# BOE Data Scraper
+<h1>BOE Data Scraper</h1>
+<p><strong>Tipología y ciclo de vida de los datos PRA2 UOC Mar2025</strong></p>
 
-Scraper en Python para extraer anuncios de licitaciones y contrataciones diarias publicadas en el Boletín Oficial del Estado (BOE) a lo largo de un período definido de 10 años (2014–2024). El proceso se organiza de forma modular y el dataset resultante se guarda en el directorio `CSV`.
+<p>Scraper en Python para extraer anuncios de licitaciones y contrataciones diarias publicadas en el Boletín Oficial del Estado (BOE) a lo largo de un período definido de 10 años (2014–2024). El proceso se organiza de forma modular y el dataset resultante se guarda en el directorio <code>CSV</code>.</p>
 
-## Estructura del Proyecto
-```
-. 
+<h2>Estructura del Proyecto</h2>
+<pre><code>.
 ├── CSV
 │   ├── LICENSE_dataset.txt 
 │   └── licitaciones_contrataciones_BOE_2014_2024.csv
@@ -21,83 +34,60 @@ Scraper en Python para extraer anuncios de licitaciones y contrataciones diarias
     ├── obtener_extra_texto.py 
     ├── obtener_datos_economicos.py
     ├── obtener_anuncios.py 
-    └── main.py
-```
-## Descripción del Código
+    ├── main.py
+    └── __init__.py
+</code></pre>
 
-El proceso se organiza en cinco apartados:
+<h2>Descripción del Código</h2>
+<ul>
+  <li><strong>obtener_anuncios:</strong> obtiene datos básicos y llama a los módulos auxiliares</li>
+  <li><strong>obtener_analisis:</strong> extrae modalidad, tipo, procedimiento, ámbito, materias y observaciones</li>
+  <li><strong>obtener_extra_texto:</strong> extrae <code>Codigos_CPV</code></li>
+  <li><strong>obtener_datos_economicos:</strong> extrae adjudicatarios y valores desde texto plano, listas y bloques</li>
+  <li><strong>main.py:</strong> orquesta el scraping completo y guarda el CSV</li>
+</ul>
 
-- **Extracción y procesamiento de los anuncios diarios – función `obtener_anuncios`**  
-  - Convierte la fecha al formato `dd/mm/aaaa`
-  - Solicita la página diaria del BOE y, en caso de error, salta ese día sin interrumpir el flujo
-  - Extrae los datos básicos para cada anuncio (`<li class="dispo">`) como institución, organismo responsable, objeto, expediente, enlace HTML y tipo preliminar (licitación o contratación)
-  - Llama a `obtener_analisis`, `obtener_extra_texto` y `obtener_datos_economicos_y_nif` para enriquecer el anuncio con campos adicionales
+<h3>Atributos del dataset</h3>
+<ul>
+  <li>Institucion</li>
+  <li>Organismo responsable</li>
+  <li>Expediente</li>
+  <li>Fecha</li>
+  <li>Tipo</li>
+  <li>Objeto</li>
+  <li>Procedimiento</li>
+  <li>Ambito_geografico</li>
+  <li>Materias_CPV</li>
+  <li>Codigos_CPV</li>
+  <li>valor_estimado_licitacion</li>
+  <li>valor_oferta_adjudicada</li>
+  <li>nombre_adjudicatario</li>
+  <li>Enlace HTML</li>
+</ul>
 
-- **Extracción de la sección “ANÁLISIS” – función `obtener_analisis`**  
-  - Extrae Modalidad, Tipo, Procedimiento, Ámbito geográfico, Materias CPV y Observaciones
+<h2>Buenas Prácticas y Ética</h2>
+<ul>
+  <li>Conexión persistente con <code>requests.Session()</code></li>
+  <li>Timeouts y reintentos por defecto</li>
+  <li>Retrasos configurables entre peticiones</li>
+  <li>Manejo robusto de errores</li>
+  <li>Visualización de adjudicatarios por consola</li>
+</ul>
 
-- **Extracción adicional del texto – función `obtener_extra_texto`**  
-  - Extrae campos como `Codigos_CPV` desde la sección detallada del texto
+<h2>Requisitos</h2>
+<p>Python 3.9+ y las siguientes dependencias:</p>
+<pre><code>requests==2.31.0
+urllib3==2.2.3
+beautifulsoup4==4.12.3
+pandas==2.0.3
+</code></pre>
 
-- **Extracción de NIFs y valores económicos – función `obtener_datos_economicos_y_nif`**  
-  - Extrae desde bloques anidados los siguientes campos:
-    - `nif_licitador`, `valor_estimado_licitacion`
-    - `nombre_poder_adjudicador`, `nif_adjudicador`
-    - `nombre_adjudicatario`, `nif_adjudicatario`
-    - `valor_oferta_adjudicada`
+<h2>Uso</h2>
+<p>Desde el directorio raíz del proyecto:</p>
+<pre><code>python source/main.py</code></pre>
 
-- **Generación del DataFrame y exportación – `main.py`**  
-  - Define el rango de fechas y llama a `obtener_anuncios` día por día
-  - Aplica un `delay` entre solicitudes
-  - Añade una columna de verificación (`verificacion_organismo`) que compara `Organismo responsable` y `nombre_poder_adjudicador`
-  - Exporta el resultado a `CSV/` como `licitaciones_contrataciones_BOE_2014_2024.csv`
+<p>El archivo CSV final estará en:</p>
+<pre><code>CSV/licitaciones_contrataciones_BOE_2014_2024.csv</code></pre>
 
-### Atributos del dataset
-
-- **Institucion**
-- **Organismo responsable**
-- **Expediente**
-- **Fecha**
-- **Tipo**
-- **Objeto**
-- **Modalidad**
-- **Procedimiento**
-- **Ambito_geografico**
-- **Materias_CPV**
-- **codigos_CPV**
-- **nif_licitador**
-- **valor_estimado_licitacion**
-- **nombre_poder_adjudicador**
-- **nif_adjudicador**
-- **nombre_adjudicatario**
-- **nif_adjudicatario**
-- **valor_oferta_adjudicada**
-- **verificacion_organismo**
-- **Enlace HTML**
-
-## Buenas Prácticas y Consideraciones Éticas
-
-- Persistencia de conexión con `requests.Session()`
-- Timeouts y reintentos configurados
-- Delay configurable entre peticiones para no sobrecargar el servidor
-- Modularidad: cada función en su archivo
-- Gestión de errores para permitir ejecución continua
-- Verificación cruzada entre fuentes de datos (`verificacion_organismo`)
-
-## Requisitos
-
-- Python 3.9  
-- Las siguientes librerías (instalables vía `pip install -r requirements.txt`):
-  - `requests == 2.31.0`
-  - `urllib3 == 2.2.3`
-  - `beautifulsoup4 == 4.12.3`
-  - `pandas == 2.0.3`
-
-## Uso
-
-Para ejecutar el scraper, sitúate en el directorio raíz y lanza:
-
-python source/main.py
-
-El CSV final se generará en `CSV/licitaciones_contrataciones_BOE_2014_2024.csv`
-
+</body>
+</html>
