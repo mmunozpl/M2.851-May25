@@ -68,8 +68,10 @@ import time
 from datetime import datetime, timedelta
 import pandas as pd
 from source.obtener_anuncios import obtener_anuncios
+from source.estadistica import analizar_csv
 
-REQUEST_DELAY: int = 3  # segundos
+
+REQUEST_DELAY: int = 0  # segundos
 
 def main() -> None:
     """
@@ -122,6 +124,9 @@ def main() -> None:
     print(f"Dataset guardado en {output_filename}")
     print("Tamaño de dataset:", df.shape)
     print(df.head(15))
+
+    analizar_csv(output_filename)
+
 
 if __name__ == '__main__':
     main()
