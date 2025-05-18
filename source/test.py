@@ -38,6 +38,7 @@ def main() -> None:
         "Expediente",
         "Fecha",
         "Tipo",
+        "Naturaleza",
         "Objeto",
         "Procedimiento",
         "Ambito_geografico",

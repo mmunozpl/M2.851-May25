@@ -71,7 +71,7 @@ from source.obtener_anuncios import obtener_anuncios
 from source.estadistica import analizar_csv
 
 
-REQUEST_DELAY: int = 0  # segundos
+REQUEST_DELAY: int = 3  # segundos
 
 def main() -> None:
     """
@@ -100,6 +100,7 @@ def main() -> None:
         "Expediente",
         "Fecha",
         "Tipo",
+        "Naturaleza",
         "Objeto",
         "Procedimiento",
         "Ambito_geografico",

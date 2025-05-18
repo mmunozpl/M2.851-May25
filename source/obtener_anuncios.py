@@ -627,6 +627,10 @@ def obtener_anuncios(fecha: str) -> List[Dict[str, str]]:
 
                 if enlace_html != "No disponible":
                     analisis_data = obtener_analisis(enlace_html)
+
+                    # guardar el tipo de contrato del análisis (Servicios, Obras, etc.) sin interferir con "Tipo"
+                    anuncio["Naturaleza"] = analisis_data.get("Tipo", "No disponible")
+
                     tipo_analisis = analisis_data.get("Tipo", "No disponible")
                     if tipo_analisis in ["Licitación", "Contratación"]:
                         anuncio["Tipo"] = tipo_analisis
