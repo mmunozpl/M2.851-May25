@@ -5,21 +5,30 @@
 
 <h2>Estructura del Proyecto</h2>
 <pre><code>.
+├── Analisis R
+│   ├── CSV
+│   ├── M2.851_20241_May25.V.1.7.Rmd   # Notebook principal de análisis en R
+│   ├── M2.851_20241_May25.V.1.7.pdf   # Informe generado en PDF
+│   └── ... (otros archivos auxiliares de R)
 ├── CSV
-│   ├── LICENSE_dataset.txt 
-│   └── licitaciones_contrataciones_BOE_2014_2024.csv
-├── LICENSE.txt 
-├── LICENSE_dataset.txt 
-├── README.md 
-├── requirements.txt 
-└── source 
-    ├── get_session.py 
-    ├── obtener_analisis.py 
-    ├── obtener_extra_texto.py 
-    ├── obtener_datos_economicos.py
-    ├── obtener_anuncios.py 
-    ├── main.py
-    └── __init__.py
+│   ├── LICENSE_dataset.txt
+│   ├── licitaciones_contrataciones_BOE_2014_2024.csv
+│   └── licitaciones_contrataciones_BOE_2014_2024_test.csv
+├── source
+│   ├── __init__.py
+│   ├── estadistica.py
+│   ├── get_session.py
+│   ├── main.py
+│   ├── obtener_analisis.py
+│   ├── obtener_anuncios.py
+│   ├── obtener_datos_economicos.py
+│   ├── obtener_extra_texto.py
+│   └── test.py
+├── LICENSE
+├── LICENSE_dataset.txt
+├── README.md
+├── requirements.txt
+└── .gitattributes
 </code></pre>
 
 <h2>Descripción del Código</h2>
@@ -29,6 +38,7 @@
   <li><strong>obtener_extra_texto:</strong> extrae <code>Codigos_CPV</code></li>
   <li><strong>obtener_datos_economicos:</strong> extrae adjudicatarios y valores desde texto plano, listas y bloques</li>
   <li><strong>main.py:</strong> orquesta el scraping completo y guarda el CSV</li>
+  <li><strong>test.py:</strong> pruebas de funcionamiento y verificación de los módulos</li>
 </ul>
 
 <h3>Atributos del dataset</h3>
@@ -41,11 +51,12 @@
   <li>Objeto</li>
   <li>Procedimiento</li>
   <li>Ambito_geografico</li>
+  <li>Naturaleza (nuevo)</li>
   <li>Materias_CPV</li>
   <li>Codigos_CPV</li>
-  <li>valor_estimado_licitacion</li>
-  <li>valor_oferta_adjudicada</li>
-  <li>nombre_adjudicatario</li>
+  <li>valor_estimado_licitacion (nuevo)</li>
+  <li>valor_oferta_adjudicada (nuevo)</li>
+  <li>nombre_adjudicatario (nuevo)</li>
   <li>Enlace HTML</li>
 </ul>
 
