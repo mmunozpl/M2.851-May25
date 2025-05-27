@@ -24,7 +24,7 @@ header-includes:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, results='asis', fig.height=6, fig.width=10, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(echo = FALSE, results='asis', fig.height=6, fig.width=10, warning = FALSE, message = FALSE)
 library(readr)
 library(dplyr)
 library(ggplot2)
@@ -2323,15 +2323,6 @@ grupos de contratos
     distintas entre "Obras" y "Servicios", y **no se cumple el
     supuesto de homocedasticidad**
 
-```{r levene_, }
-library(car)
-leveneTest(log10(valor_oferta_adjudicada) ~ Naturaleza, data = df_test)
-```
-
-El p-valor es \< 0.05, no se cumple la igualdad de varianzas
-(homocedasticidad). Se aplica el **test de Levene** para verificar si
-las varianzas de los valores adjudicados son iguales en "Obras" y
-"Servicios"
 
 ```{r homocedasticidad}
 df_test <- df_contratacion_final %>%
@@ -2344,7 +2335,7 @@ levene_test <- leveneTest(log10(valor_oferta_adjudicada) ~ Naturaleza, data = df
 levene_test
 ```
 
--   El p-valor del test de Levene suele ser **muy inferior a 0,05**, lo
+-   El p-valor del test de Levene es **muy inferior a 0,05**, lo
     que indica que **no se puede asumir igualdad de varianzas**. Así, se
     refuerza la necesidad de aplicar un test no paramétrico, ya que
     tanto la normalidad como la homocedasticidad no se cumplen en los
