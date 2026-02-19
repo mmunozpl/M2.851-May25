@@ -1,5 +1,5 @@
 <h1>BOE Data Scraper</h1>
-<p><strong>Tipología y ciclo de vida de los datos PRA2 UOC Mar2025</strong></p>
+<p><strong>Tipología y ciclo de vida de los datos UOC Mar2025</strong></p>
 
 <p>Scraper en Python para extraer anuncios de licitaciones y contrataciones diarias publicadas en el Boletín Oficial del Estado (BOE) a lo largo de un período definido de 10 años (2014–2024). El proceso se organiza de forma modular y el dataset resultante se guarda en el directorio <code>CSV</code>.</p>
 
