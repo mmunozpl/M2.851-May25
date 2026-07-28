@@ -84,5 +84,25 @@ pandas==2.0.3
 <p>El archivo CSV final estará en:</p>
 <pre><code>CSV/licitaciones_contrataciones_BOE_2014_2024.csv</code></pre>
 
+<h2>Disponibilidad del Dataset</h2>
+<ul>
+  <li><strong>Zenodo (DOI):</strong> <a href="https://doi.org/10.5281/zenodo.18712463">10.5281/zenodo.18712463</a> — <a href="https://doi.org/10.5281/zenodo.15117890">10.5281/zenodo.15117890</a> (DOI de concepto, siempre apunta a la última versión)</li>
+  <li><strong>Hugging Face:</strong> <a href="https://huggingface.co/datasets/ManPla/licitaciones-contrataciones-boe-2014-2024">ManPla/licitaciones-contrataciones-boe-2014-2024</a></li>
+  <li><strong>Autor:</strong> Manuel Muñoz Plá — ORCID: <a href="https://orcid.org/0009-0000-5714-912X">0009-0000-5714-912X</a></li>
+</ul>
+
+<h2>Cómo citar</h2>
+<p>Si mencionas o usas esta obra, cítala así (GitHub también ofrece el botón «Cite this repository», generado desde <code>CITATION.cff</code>):</p>
+<pre><code>Muñoz Plá, M. (2026). Licitaciones y Contrataciones del BOE (2014–2024) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.18712463</code></pre>
+
+<pre><code>@dataset{munozpla2026licitacionesboe,
+  author    = {Muñoz Plá, Manuel},
+  title     = {Licitaciones y Contrataciones del BOE (2014–2024)},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.18712463},
+  url       = {https://doi.org/10.5281/zenodo.18712463}
+}</code></pre>
+
 </body>
 </html>

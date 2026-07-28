@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Si usas este código o el dataset derivado, cítalo como se indica a continuación."
+type: dataset
+title: "Licitaciones y Contrataciones del BOE (2014–2024)"
+authors:
+  - family-names: "Muñoz Plá"
+    given-names: "Manuel"
+    orcid: "https://orcid.org/0009-0000-5714-912X"
+    affiliation: "Universitat Oberta de Catalunya"
+doi: 10.5281/zenodo.18712463
+date-released: 2026-07-28
+url: "https://doi.org/10.5281/zenodo.18712463"
+repository-code: "https://github.com/mmunozpl/M2.851-May25"
+license: CC0-1.0
+keywords:
+  - BOE
+  - licitaciones
+  - contrataciones
+  - sector público
+  - dataset
+  - España
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.15117890"
+    description: "DOI de concepto en Zenodo (siempre apunta a la última versión)"
