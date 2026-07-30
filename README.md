@@ -3,6 +3,8 @@
 
 <p>Scraper en Python para extraer anuncios de licitaciones y contrataciones diarias publicadas en el Boletín Oficial del Estado (BOE) a lo largo de un período definido de 10 años (2014–2024). El proceso se organiza de forma modular y el dataset resultante se guarda en el directorio <code>CSV</code>.</p>
 
+<p>Sitio del autor: <a href="https://manpla.net/perfil">manpla.net</a> · publicaciones: <a href="https://manpla.net/papers">manpla.net/papers</a></p>
+
 <h2>Estructura del Proyecto</h2>
 <pre><code>.
 ├── Analisis R
